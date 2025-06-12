@@ -18,9 +18,7 @@ NieuwbouwClean = data.frame(
 )
 View(NieuwbouwClean)
 
-DataSetEmissieClean <- DataSetEmissie2[-48:-59,]
 DataSetEmissie0 <- EmissieDataSet[,-10:-26]
 DataSetEmissie1 <- DataSetEmissie0[,-1:-7]
-DataSetEmissie2 <- DataSetEmissie1[-1:-41,]
-DataSetEmissieClean <- DataSetEmissie2[-48:-59,]
+DataSetEmissieClean <- DataSetEmissie1[42:47,]
 View(DataSetEmissieClean)
