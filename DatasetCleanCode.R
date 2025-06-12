@@ -1,16 +1,16 @@
 Nieuwbouw0 <- Nieuwbouw[-1,]
-j2012 = sum(as.numeric(Nieuwbouw0[2:13, 2]))
-j2012 = sum(as.numeric(Nieuwbouw0[14:25, 2]))
-j2012 = sum(as.numeric(Nieuwbouw0[26:37, 2]))
-j2012 = sum(as.numeric(Nieuwbouw0[38:49, 2]))
-j2012 = sum(as.numeric(Nieuwbouw0[50:61, 2]))
-j2012 = sum(as.numeric(Nieuwbouw0[62:73, 2]))
-j2012 = sum(as.numeric(Nieuwbouw0[74:85, 2]))
-j2012 = sum(as.numeric(Nieuwbouw0[86:97, 2]))
-j2012 = sum(as.numeric(Nieuwbouw0[98:109, 2]))
-j2012 = sum(as.numeric(Nieuwbouw0[110:121, 2]))
-j2012 = sum(as.numeric(Nieuwbouw0[122:133, 2]))
-j2012 = sum(as.numeric(Nieuwbouw0[134:145, 2]))
+j2012 = as.numeric(Nieuwbouw0[12, 2])
+j2013 = as.numeric(Nieuwbouw0[24, 2])
+j2014 = as.numeric(Nieuwbouw0[36, 2])
+j2015 = as.numeric(Nieuwbouw0[48, 2])
+j2016 = as.numeric(Nieuwbouw0[60, 2])
+j2017 = as.numeric(Nieuwbouw0[72, 2])
+j2018 = as.numeric(Nieuwbouw0[84, 2])
+j2019 = as.numeric(Nieuwbouw0[96, 2])
+j2020 = as.numeric(Nieuwbouw0[108, 2])
+j2021 = as.numeric(Nieuwbouw0[120, 2])
+j2022 = as.numeric(Nieuwbouw0[132, 2])
+j2023 = as.numeric(Nieuwbouw0[144, 2])
 NieuwbouwClean = data.frame(
   Jaar = c("2012", "2013", "2014", "2015", "2016", "2017", 
            "2018", "2019", "2020", "2021", "2022", "2023"),
