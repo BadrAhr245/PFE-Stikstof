@@ -1,3 +1,10 @@
+install.packages("Rtools")
+install.packages("readxl")
+library(readxl)
+
+Nieuwbouw = read_xlsx("C:/Users/Badr/Downloads/Nieuwbouw.xlsx")
+EmissieDataSet = read_xlsx("C:/Users/Badr/Downloads/EmissieDataSet.xlsx")
+
 Nieuwbouw0 <- Nieuwbouw[-1,]
 j2012 = as.numeric(Nieuwbouw0[12, 2])
 j2013 = as.numeric(Nieuwbouw0[24, 2])
@@ -22,3 +29,4 @@ DataSetEmissie0 <- EmissieDataSet[,-10:-26]
 DataSetEmissie1 <- DataSetEmissie0[,-1:-7]
 DataSetEmissieClean <- DataSetEmissie1[42:47,]
 View(DataSetEmissieClean)
+
