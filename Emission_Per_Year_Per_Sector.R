@@ -8,18 +8,6 @@ combined_data <- merge(DataSetEmissieCleanBouw, DataSetEmissieCleanLandbouw, by 
 combined_data <- combined_data %>%
   filter(Jaar != 2015)
 
-#3. Make a double bar chart for Bouw and Landbouw for the Emission per Year per Sector
-ggplot(combined_data, aes(x = factor(Jaar), y = Emissie.x, fill = Sector.x)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  labs(
-    title = "Emission per Year per Sector",
-    x = "Jaar",
-    y = "Emissie",
-    fill = "Sector"
-  ) +
-  theme_minimal()
-
-
 plot_data <- combined_data %>%
   pivot_longer(
     cols = c(Emissie.x, Emissie.y, Sector.x, Sector.y),
