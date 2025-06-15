@@ -32,8 +32,8 @@ View(NieuwbouwClean)
 
 
 DataSetEmissie0 <- EmissieDataSet[,-10:-26]
-DataSetEmissie1 <- DataSetEmissie0[,-1:-7]
-DataSetEmissieClean <- DataSetEmissie1[42:47,]
+DataSetEmissie1 <- DataSetEmissie0[-18:-41,-1:-7]
+DataSetEmissieClean <- DataSetEmissie1[12:23,]
 View(DataSetEmissieClean)
 
 
