@@ -1,8 +1,10 @@
 library(tidyr)
 library(ggplot2)
 
-#1. Merge the cleaned tables of Energy Usage of Bouw and Landbouw for the years 2019-2023
+#Merge the cleaned tables of Energy Usage of Bouw and Landbouw (df_filtered_bouw and df_filtered_landbouw) for the years 2019-2023.
 combined_data <- merge(df_filtered_bouw, df_filtered_landbouw, by = "Perioden")
+
+#Make a double bar chart with the merged data for Bouw and Landbouw for the years 2019-2023 and the Energy Usage respectively.
 
 plot_data <- combined_data %>%
   pivot_longer(
