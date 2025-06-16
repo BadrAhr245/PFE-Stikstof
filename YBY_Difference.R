@@ -1,8 +1,10 @@
 library(tidyr)
 library(ggplot2)
+library(dplyr)
 
+only_bouw_clean <- DataSetEmissieClean %>% filter(Sector == "Bouw")
 #1. merge tables
-merged_table <- merge(NieuwbouwClean, DataSetEmissieClean, by = "Jaar")
+merged_table <- merge(NieuwbouwClean, only_bouw_clean, by = "Jaar")
 #2. remove the 2015 row, because we start 2019 as the baseline measurement for our graph
 merged_table <- merged_table[-1, ]
 #3. Loop over all the rows and check the previous "Aantalwoningen" and "Emissie" and get the %difference
