@@ -1,12 +1,12 @@
+install.packages("tidyverse")
 install.packages("Rtools")
 install.packages("readxl")
 library(readxl)
 
 
 
-Nieuwbouw = read_xlsx("C:/Users/Badr/Downloads/Nieuwbouw.xlsx")
-EmissieDataSet = read_xlsx("C:/Users/Badr/Downloads/EmissieDataSet.xlsx")
-
+Nieuwbouw = read_xlsx("Nieuwbouw.xlsx")
+EmissieDataSet = read_xlsx("EmissieDataSet.xlsx")
 
 
 Nieuwbouw0 <- Nieuwbouw[-1,]
