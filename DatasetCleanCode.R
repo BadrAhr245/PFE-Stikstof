@@ -7,7 +7,8 @@ library(readxl)
 
 Nieuwbouw = read_xlsx("Nieuwbouw.xlsx")
 EmissieDataSet = read_xlsx("EmissieDataSet.xlsx")
-
+EnergieVerbruikLandbouw = read_xlsx("EnergieverbruikLandbouw.xlsx")
+EnergieVerbruikBouw = read_xlsx("EnergieverbruikBouw.xlsx")
 
 
 Nieuwbouw0 <- Nieuwbouw[-1,]
