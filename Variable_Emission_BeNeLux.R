@@ -62,9 +62,10 @@ emission_df_2022 <- data.frame(
   name = rownames(EmissieDataSetBeNeLuxClean),
   Emission2022 = c(as.numeric(emission_2022[1,1]),as.numeric(emission_2022[2,1]), as.numeric(emission_2022[3,1]))
 )
-View(emiss)
+
 benelux_map_2022 <- benelux_map %>%
   left_join(emission_df_2022, by = "name")
+
 ggplot(benelux_map_2022) +
   geom_sf(aes(fill = Emission2022)) +
   scale_fill_gradient(low = "lightblue", high = "darkred") +
@@ -72,6 +73,7 @@ ggplot(benelux_map_2022) +
     title = "Emissie per land in 2022 (Benelux)",
     fill = "Emissie"
   ) +
+  coord_sf(xlim = c(2, 9), ylim = c(49, 55), expand = FALSE) +
   theme_minimal()
 
 
