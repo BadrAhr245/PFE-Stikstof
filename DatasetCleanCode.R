@@ -9,6 +9,7 @@ Nieuwbouw = read_xlsx("Nieuwbouw.xlsx")
 EmissieDataSet = read_xlsx("EmissieDataSet.xlsx")
 EnergieVerbruikLandbouw = read_xlsx("EnergieverbruikLandbouw.xlsx")
 EnergieVerbruikBouw = read_xlsx("EnergieverbruikBouw.xlsx")
+EmissieDataSetBeNeLux = read_xlsx("EmissionBeNeLux.xlsx")
 
 
 Nieuwbouw0 <- Nieuwbouw[-1,]
@@ -51,3 +52,7 @@ EnergieverbruikLandbouw0 <- EnergieverbruikLandbouw[-2,]
 EnergieverbruikLandbouwClean <- EnergieverbruikLandbouw0[,-1]
 rownames(EnergieverbruikLandbouwClean) = c("Periode", "Total usage agriculture sector")
 View(EnergieverbruikLandbouwClean)
+
+
+
+
