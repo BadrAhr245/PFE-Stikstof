@@ -56,3 +56,5 @@ View(EnergieverbruikLandbouwClean)
 
 
 
+View(EmissieDataSetBeNeLux)
+EmissieDataSetBeNeLuxClean <- EmissieDataSetBeNeLux[if(EmissieDataSetBeNeLux$),]
