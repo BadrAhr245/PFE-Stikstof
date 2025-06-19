@@ -56,5 +56,12 @@ View(EnergieverbruikLandbouwClean)
 
 
 
-View(EmissieDataSetBeNeLux)
-EmissieDataSetBeNeLuxClean <- EmissieDataSetBeNeLux[if(EmissieDataSetBeNeLux$),]
+
+EmissieDataSetBeNeLux1 <- EmissieDataSetBeNeLux[
+  (EmissieDataSetBeNeLux$TIME %in% c("Netherlands", "Belgium", "Luxembourg")),
+]
+EmissieDataSetBeNeLuxClean <- EmissieDataSetBeNeLux1[
+  ,c("2019", "2020", "2021", "2022")
+]
+rownames(EmissieDataSetBeNeLuxClean) = c("Belgium", "Luxembourg", "Netherlands")
+View(EmissieDataSetBeNeLuxClean)
