@@ -1,4 +1,4 @@
-#install.packages(c("ggplot2", "sf", "rnaturalearth", "rnaturalearthdata", "dplyr"))
+install.packages(c("ggplot2", "sf", "rnaturalearth", "rnaturalearthdata", "dplyr"))
 library(ggplot2)
 library(sf)
 library(rnaturalearth)
