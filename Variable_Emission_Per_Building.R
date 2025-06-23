@@ -2,7 +2,7 @@ library(tidyverse)
 library(dplyr)
 library(ggplot2)
 
-#From the DataSetEmissieClean, filter out the year 2015 and only take the data for which Sector = Bouw
+#First run DataSetCleanCode for DataSetEmissieClean and NieuwbouwClean, then filter out the year 2015 and only take the data for which Sector = Bouw
 filtered_emissie_bouw <- DataSetEmissieClean %>%
   filter(Sector == "Bouw" & Jaar >= 2019)
 
@@ -22,7 +22,6 @@ ggplot(merged_data, aes(x=Jaar, y=av_emission_per_building)) +
   title = "Average Emission per Constructed Building 2019-2023"
   )
 
-View(merged_data)
 
 
        
