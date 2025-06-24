@@ -5,15 +5,20 @@ library(rnaturalearth)
 library(rnaturalearthdata)
 library(dplyr)
 
+#Created a list in which all oppervlak was put of the different countries
 land_oppervlak_km2 <- c("Belgium" = 30528, "Luxembourg" = 2586, "Netherlands" = 41543)
 
 landen <- rownames(EmissieDataSetBeNeLuxClean)
 jaren <- colnames(EmissieDataSetBeNeLuxClean)
 
+
+#Made empty lists to fill in so that i could use them for later
 tabelland <- c()
 tabeljaar <- c()
 tabelemissie <- c()
 
+
+#Double for loop to fill in the list and make a variable for every country in which emmision per km2 was put
 for (land in landen) {
   for (jaar in jaren) {
     emissie <- as.numeric(EmissieDataSetBeNeLuxClean[land, jaar])
@@ -28,13 +33,17 @@ for (land in landen) {
   }
 }
 
+
+#Made another list for emmision per country per year to plot
 tabeltotaal_emissieKM2 <- data.frame(
   Land = tabelland,
   Jaar = tabeljaar,
   EmissiePerKM2 = tabelemissie
 )
 
+#Plotting of previous list
 
+##########You need to run the plots seperately or they won't work############
 ggplot(tabeltotaal_emissieKM2, aes(x = as.integer(Jaar), y = EmissiePerKM2, color = Land)) +
   geom_line(size = 1.2) +
   geom_point(size = 2) +
@@ -49,7 +58,7 @@ ggplot(tabeltotaal_emissieKM2, aes(x = as.integer(Jaar), y = EmissiePerKM2, colo
 
 
 
-
+#Setting up worldmap for the heatmap plot and making sure only BeNeLux are visible
 world <- ne_countries(scale = "medium", returnclass = "sf")
 
 benelux_map <- world %>%
@@ -66,6 +75,9 @@ emission_df_2022 <- data.frame(
 benelux_map_2022 <- benelux_map %>%
   left_join(emission_df_2022, by = "name")
 
+
+
+##########You need to run the plots seperately or they won't work############
 ggplot(benelux_map_2022) +
   geom_sf(aes(fill = Emission2022)) +
   scale_fill_gradient(low = "lightblue", high = "darkred") +

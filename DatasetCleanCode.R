@@ -4,14 +4,14 @@ install.packages("readxl")
 library(readxl)
 
 
-
+#Here I read all datasets that needed to be cleaned
 Nieuwbouw = read_xlsx("Nieuwbouw.xlsx")
 EmissieDataSet = read_xlsx("EmissieDataSet.xlsx")
 EnergieVerbruikLandbouw = read_xlsx("EnergieverbruikLandbouw.xlsx")
 EnergieVerbruikBouw = read_xlsx("EnergieverbruikBouw.xlsx")
 EmissieDataSetBeNeLux = read_xlsx("EmissionBeNeLux.xlsx")
 
-
+#Cleaning of nieuwbouw
 Nieuwbouw0 <- Nieuwbouw[-1,]
 j2012 = as.numeric(Nieuwbouw0[12, 2])
 j2013 = as.numeric(Nieuwbouw0[24, 2])
@@ -33,21 +33,21 @@ NieuwbouwClean = data.frame(
 View(NieuwbouwClean)
 
 
-
+#Cleaning of emission
 DataSetEmissie0 <- EmissieDataSet[,-10:-26]
 DataSetEmissie1 <- DataSetEmissie0[-18:-41,-1:-7]
 DataSetEmissieClean <- DataSetEmissie1[12:23,]
 View(DataSetEmissieClean)
 
 
-
+#Cleaning of energy usage sector bouw
 EnergieverbruikBouw0 <- EnergieverbruikBouw[-2,]
 EnergieverbruikBouwClean <- EnergieverbruikBouw0[,-1]
 rownames(EnergieverbruikBouwClean) = c("Periode", "Total usage build sector")
 View(EnergieverbruikBouwClean)
 
 
-
+#Cleaning of energy usage sector landbouw
 EnergieverbruikLandbouw0 <- EnergieverbruikLandbouw[-2,]
 EnergieverbruikLandbouwClean <- EnergieverbruikLandbouw0[,-1]
 rownames(EnergieverbruikLandbouwClean) = c("Periode", "Total usage agriculture sector")
@@ -56,7 +56,7 @@ View(EnergieverbruikLandbouwClean)
 
 
 
-
+#Cleaning of emmision dataset BeNeLux
 EmissieDataSetBeNeLux1 <- EmissieDataSetBeNeLux[
   (EmissieDataSetBeNeLux$TIME %in% c("Netherlands", "Belgium", "Luxembourg")),
 ]
